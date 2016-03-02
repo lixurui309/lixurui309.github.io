@@ -4,12 +4,16 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>做一个记录者 | lixurui&#39;s blog</title>
+    <title>关于css优先级和document.write() | lixurui&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="lixuuri">
     
-    <meta name="description" content="这是2015年我学习心理咨询师的时候做了一个沙床，老师问我这几个人中你认为哪个是你自己？真的纠结了很久，感觉图片中的父亲、母亲、孩子和摄影师都是我，尤其摄影师，是我不能放弃的一个角色：我一直很喜欢当一个记录者。　　2016年1月10日，微信朋友圈被“微信公开课”刷屏了。那天晚上我想了很多很多，想想这">
+    <meta name="description" content="最近照着慕课网的JavaScript教程对JavaScript进行了一次复习，过程中有一些小知识点的完善。
+css优先级的问题
+　　在JavaScript入门篇4-1的编程挑战中，题目要求是这样的：
+
+　　小伙伴们，请编写”改变颜色”、”改变宽高”、”隐藏内容”、”显示内容”、”取消设置”的函数，点">
     
     
     
@@ -66,15 +70,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/02/24/做一个记录者/" title="做一个记录者" itemprop="url">做一个记录者</a>
+      <a href="/2016/03/02/关于css优先级和document-write/" title="关于css优先级和document.write()" itemprop="url">关于css优先级和document.write()</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="lixuuri">lixuuri</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-02-24T07:29:20.000Z" itemprop="datePublished">2月 24 2016</time>
-    更新日期:<time datetime="2016-02-24T09:02:20.773Z" itemprop="dateModified">2月 24 2016</time>
+    <time datetime="2016-03-02T10:03:23.000Z" itemprop="datePublished">3月 2 2016</time>
+    更新日期:<time datetime="2016-03-02T10:06:02.477Z" itemprop="dateModified">3月 2 2016</time>
     
   </p>
 </header>
@@ -83,25 +87,41 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#css优先级的问题"><span class="toc-number">1.</span> <span class="toc-text">css优先级的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#document-write的问题"><span class="toc-number">2.</span> <span class="toc-text">document.write的问题</span></a></li></ol>
 		</div>
 		
-		<p>　　<img src="http://7xr78d.com1.z0.glb.clouddn.com/1.jpg" alt=""><br>　　这是2015年我学习心理咨询师的时候做了一个沙床，老师问我这几个人中你认为哪个是你自己？真的纠结了很久，感觉图片中的父亲、母亲、孩子和摄影师都是我，尤其摄影师，是我不能放弃的一个角色：我一直很喜欢当一个记录者。<br>　　2016年1月10日，微信朋友圈被“微信公开课”刷屏了。那天晚上我想了很多很多，想想这些年网络带给我们的改变，给我们生活方式和生活习惯上的改变。作为一个喜欢记录的人，在“网上”记录我的生活也成了一个习惯。一年时间在美拍上拍摄了100多条视频，微信上也时常有我分享的图片，翻看以前的状态，许多往事和回忆涌上心头。<br>　　2015年我24岁，这一年我思考了很多，成长了很多。无论对未来的职业规划还是对未来的人生思考都和以前有了很大的不同。慢慢的找到了自己喜欢的方向，不再喜欢窝在床上刷剧，更想要做一些有意义的事。学画画让我心静、弹吉他唱歌让我轻松、学钩针让我细心、旅游让我视野开阔、学习心理咨询师让我在生活中能够更好的调整自己的心态……长大后，这些“三心二意”的爱好仅仅就变成了爱好，不再有许多功利的目的。细想想，原来之前有那么多的时间都被我浪费了！<br>　　更让我开心的是，在软件方面我找到了自己喜欢的方向：前端。和其他方向相比，有不一样的成就感。做喜欢的事也更加精力充沛！但是了解了一些后，和网上的大神们相比，自己真的差的太远了，有几天总是很焦虑。我明白自己的问题在于：想的太多而做的太少。所以现在沉下心，没有博客可以开始建嘛，不会的东西再接着学呀~还是要一步步的成长。<br>　　加油~</p>
+		<p>　　最近照着<a href="http://www.imooc" target="_blank" rel="external">慕课网</a>的JavaScript教程对JavaScript进行了一次复习，过程中有一些小知识点的完善。</p>
+<h2 id="css优先级的问题">css优先级的问题</h2>
+<p>　　在JavaScript入门篇4-1的编程挑战中，题目要求是这样的：</p>
+<blockquote>
+<p>　　小伙伴们，请编写”改变颜色”、”改变宽高”、”隐藏内容”、”显示内容”、”取消设置”的函数，点击相应按钮执行相应操作，点击”取消设置”按钮后，提示是否取消设置，如是执行操作，否则不做操作。</p>
+</blockquote>
+<p>　　对于取消设置的操作，我想用到前面学到的控制类名className属性，即在css中新设置一个控制类，让它和原本的样式相同，当按取消设置的时候，即可回到最初的状态。<br>　　<pre><code><script type="text/javascript">　<br>function cancle(){<br>    var a = confirm(“确定要取消设置？”);<br>    if(a == true){<br>        text.className(“oldStyle”);<br>    }<br>}</script></code></pre></p>
+<p>　　可是我发现并没有达到预计的效果。纠结了挺久，通过输出text.className，发现已经改为了oldStyle，然而样式并没有改变，由此才想到了css优先级的问题！当在oldStyle中引入了  !important 后终于达到了所要的效果。但解决这个问题用 !important 并不是一个好的方式，在今后也要注意 !important绝不可随便使用。<br>　　<br>　　通过这次编程练习让我对css优先级有了切身的体会，虽然这个知识点已经看到过多次，但是在实际写代码中还是没有注意这些的概念。
+　　</p>
+<h2 id="document-write的问题">document.write的问题</h2>
+<p>　　在一次编程练习中。我发现在JavaScript中写成下面两种方式产生的结果不同。<br>　　<pre><code><script type="text/javascript">　　<br>window.onload=function(){<br>    document.write(“系好安全带，准备起航——ＪＳ”);<br>    }</script></code></pre><br>　　<pre><code><script type="text/javascript"><br>    document.write(“系好安全带，准备起航——ＪＳ”);<br></script></code></pre></p>
+<p>　　用第一种方式时，页面中本来的内容都不见了，仅有document.write中的内容，而用第二种方式时，页面中本来的内容和document.write中的内容都出现了。<br>　　通过查资料，我知道了在页面加载后，浏览器的输出流会自动关闭，之后任何一个对当前页面进行操作的document.write()方法将打开一个新的输出流，将会清除当前页面的内容。<br>　　而第二种方式是在页面加载过程中调用的document.write()方法，由于是边加载边呈现的，因此是在页面中追加的内容。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/CSS/">CSS</a>
+  </div>
+
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/随写/">随写</a>
+  <a class="article-category-link" href="/categories/前端/">前端</a>
 </div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/02/24/做一个记录者/" data-title="做一个记录者 | lixurui&#39;s blog" data-tsina="1554028216@qq.com" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/03/02/关于css优先级和document-write/" data-title="关于css优先级和document.write() | lixurui&#39;s blog" data-tsina="1554028216@qq.com" class="share clearfix">
   </div>
 
 </div>
@@ -110,19 +130,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/03/02/关于css优先级和document-write/" title="关于css优先级和document.write()">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  关于css优先级和document.write()</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/02/23/hello-world/"  title="Hello World">
+<a href="/2016/02/24/做一个记录者/"  title="做一个记录者">
  <strong>NEXT:</strong><br/> 
- <span>Hello World
+ <span>做一个记录者
 </span>
 </a>
 </div>
@@ -135,7 +147,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#css优先级的问题"><span class="toc-number">1.</span> <span class="toc-text">css优先级的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#document-write的问题"><span class="toc-number">2.</span> <span class="toc-text">document.write的问题</span></a></li></ol>
   </div>
 
 <div id="asidepart">
