@@ -78,7 +78,7 @@ css优先级的问题
     </p>
   <p class="article-time">
     <time datetime="2016-03-02T10:03:23.000Z" itemprop="datePublished">3月 2 2016</time>
-    更新日期:<time datetime="2016-03-02T10:06:02.477Z" itemprop="dateModified">3月 2 2016</time>
+    更新日期:<time datetime="2016-03-02T10:31:09.915Z" itemprop="dateModified">3月 2 2016</time>
     
   </p>
 </header>
@@ -96,11 +96,23 @@ css优先级的问题
 <blockquote>
 <p>　　小伙伴们，请编写”改变颜色”、”改变宽高”、”隐藏内容”、”显示内容”、”取消设置”的函数，点击相应按钮执行相应操作，点击”取消设置”按钮后，提示是否取消设置，如是执行操作，否则不做操作。</p>
 </blockquote>
-<p>　　对于取消设置的操作，我想用到前面学到的控制类名className属性，即在css中新设置一个控制类，让它和原本的样式相同，当按取消设置的时候，即可回到最初的状态。<br>　　<pre><code><script type="text/javascript">　<br>function cancle(){<br>    var a = confirm(“确定要取消设置？”);<br>    if(a == true){<br>        text.className(“oldStyle”);<br>    }<br>}</script></code></pre></p>
-<p>　　可是我发现并没有达到预计的效果。纠结了挺久，通过输出text.className，发现已经改为了oldStyle，然而样式并没有改变，由此才想到了css优先级的问题！当在oldStyle中引入了  !important 后终于达到了所要的效果。但解决这个问题用 !important 并不是一个好的方式，在今后也要注意 !important绝不可随便使用。<br>　　<br>　　通过这次编程练习让我对css优先级有了切身的体会，虽然这个知识点已经看到过多次，但是在实际写代码中还是没有注意这些的概念。
+<p>　　对于取消设置的操作，我想用到前面学到的控制类名className属性，即在css中新设置一个控制类，让它和原本的样式相同，当按取消设置的时候，即可回到最初的状态。</p>
+<pre><code>            <span class="function"><span class="keyword">function</span> <span class="title">cancle</span><span class="params">()</span></span>{
+                <span class="keyword">var</span> a = confirm(<span class="string">"确定要取消设置？"</span>);
+                <span class="keyword">if</span>(a == <span class="literal">true</span>){
+                    text.className(<span class="string">"oldStyle"</span>);
+                }
+            }
+</code></pre><p>　　可是我发现并没有达到预计的效果。纠结了挺久，通过输出text.className，发现已经改为了oldStyle，然而样式并没有改变，由此才想到了css优先级的问题！当在oldStyle中引入了  !important 后终于达到了所要的效果。但解决这个问题用 !important 并不是一个好的方式，在今后也要注意 !important绝不可随便使用。<br>　　<br>　　通过这次编程练习让我对css优先级有了切身的体会，虽然这个知识点已经看到过多次，但是在实际写代码中还是没有注意这些的概念。
 　　</p>
 <h2 id="document-write的问题">document.write的问题</h2>
-<p>　　在一次编程练习中。我发现在JavaScript中写成下面两种方式产生的结果不同。<br>　　<pre><code><script type="text/javascript">　　<br>window.onload=function(){<br>    document.write(“系好安全带，准备起航——ＪＳ”);<br>    }</script></code></pre><br>　　<pre><code><script type="text/javascript"><br>    document.write(“系好安全带，准备起航——ＪＳ”);<br></script></code></pre></p>
+<p>　　在一次编程练习中。我发现在JavaScript中写成下面两种方式产生的结果不同。</p>
+<pre><code>             window.onload=function(){
+                　document.write("系好安全带，准备起航——ＪＳ");
+                    }</code></pre>　
+<pre><code>             document.write("系好安全带，准备起航——ＪＳ");</code></pre>
+
+
 <p>　　用第一种方式时，页面中本来的内容都不见了，仅有document.write中的内容，而用第二种方式时，页面中本来的内容和document.write中的内容都出现了。<br>　　通过查资料，我知道了在页面加载后，浏览器的输出流会自动关闭，之后任何一个对当前页面进行操作的document.write()方法将打开一个新的输出流，将会清除当前页面的内容。<br>　　而第二种方式是在页面加载过程中调用的document.write()方法，由于是边加载边呈现的，因此是在页面中追加的内容。</p>
   
 	</div>
