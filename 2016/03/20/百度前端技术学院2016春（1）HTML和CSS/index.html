@@ -1,0 +1,392 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>百度前端技术学院2016春（1）HTML和CSS | lixurui&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="lixuuri">
+    
+    <meta name="description" content="任务一：零基础HTML编码
+超链接不跳转
+
+代码
+  &amp;lt;a href=&quot;#&quot; onclick=&quot;javascript:return false;&quot;&amp;gt;父级菜单&amp;lt;/a&amp;gt;
+
+链接的onclick事件先被执行，其次才是href。若想让href下的动作不执行，onclick要返回一个f">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="lixurui&#39;s blog" title="lixurui&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="lixurui&#39;s blog">lixurui&#39;s blog</a></h1>
+				<h2 class="blog-motto">be a recorder</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/20/百度前端技术学院2016春（1）HTML和CSS/" title="百度前端技术学院2016春（1）HTML和CSS" itemprop="url">百度前端技术学院2016春（1）HTML和CSS</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="lixuuri">lixuuri</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-03-20T13:08:25.000Z" itemprop="datePublished">3月 20 2016</time>
+    更新日期:<time datetime="2016-03-20T13:10:00.969Z" itemprop="dateModified">3月 20 2016</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#任务一：零基础HTML编码"><span class="toc-number">1.</span> <span class="toc-text">任务一：零基础HTML编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#超链接不跳转"><span class="toc-number">1.1.</span> <span class="toc-text">超链接不跳转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务二：零基础HTML与CSS编码"><span class="toc-number">2.</span> <span class="toc-text">任务二：零基础HTML与CSS编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#块状元素、内联元素、内联块状元素"><span class="toc-number">2.1.</span> <span class="toc-text">块状元素、内联元素、内联块状元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#伪类选择符"><span class="toc-number">2.2.</span> <span class="toc-text">伪类选择符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小工具的使用"><span class="toc-number">2.3.</span> <span class="toc-text">小工具的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格相关"><span class="toc-number">2.4.</span> <span class="toc-text">表格相关</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务三：三栏式布局"><span class="toc-number">3.</span> <span class="toc-text">任务三：三栏式布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绝对定位方式"><span class="toc-number">3.1.</span> <span class="toc-text">绝对定位方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮动方式"><span class="toc-number">3.2.</span> <span class="toc-text">浮动方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#margin负值的方式"><span class="toc-number">3.3.</span> <span class="toc-text">margin负值的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文档流"><span class="toc-number">3.4.</span> <span class="toc-text">文档流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">3.5.</span> <span class="toc-text">参考</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务四：定位和居中问题"><span class="toc-number">4.</span> <span class="toc-text">任务四：定位和居中问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#百分比+margin负值的方法"><span class="toc-number">4.1.</span> <span class="toc-text">百分比+margin负值的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#margin：auto水平居中+vertial-align垂直居中"><span class="toc-number">4.2.</span> <span class="toc-text">margin：auto水平居中+vertial-align垂直居中</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务五：HTML和CSS（二）"><span class="toc-number">5.</span> <span class="toc-text">任务五：HTML和CSS（二）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务六：HTML和CSS模拟报纸排版"><span class="toc-number">6.</span> <span class="toc-text">任务六：HTML和CSS模拟报纸排版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源代码"><span class="toc-number">7.</span> <span class="toc-text">源代码</span></a></li></ol>
+		</div>
+		
+		<h2 id="任务一：零基础HTML编码">任务一：零基础HTML编码</h2>
+<h3 id="超链接不跳转">超链接不跳转</h3>
+<ul>
+<li><p>代码</p>
+<pre><code>  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">onclick</span>=<span class="value">"javascript:return false;"</span>&gt;</span>父级菜单<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+</code></pre></li>
+<li><p>链接的onclick事件先被执行，其次才是href。若想让href下的动作不执行，onclick要返回一个false值。</p>
+</li>
+<li>尽量不要用JavaScript协议作为href的属性值。</li>
+<li>href=”#”为跳转到本页面的顶部，若某些情况想防止抖动，可以写成href=”javasciprt:void(0)”,此时什么也不会发生。要注意这两种的区别。</li>
+</ul>
+<h2 id="任务二：零基础HTML与CSS编码">任务二：零基础HTML与CSS编码</h2>
+<h3 id="块状元素、内联元素、内联块状元素">块状元素、内联元素、内联块状元素</h3>
+<ul>
+<li>做这个任务的时候，多次有把块状、内联、内联块状元素之间相互转换的需求<br>| 块状元素       | 内联元素   |内联块状元素    |<br>| :——–:   | :—–:  | :—-:  |<br>| div h    | a  span  |   img     |<br>| form       |  em strong  |  input   |<br>| table        | code  |   |<br>| ol ul|i||</li>
+</ul>
+<ul>
+<li>这个问题在居中问题中也有相应的联系，例如要设图片居中时，图片是一个行内元素，只需将其父元素设置text-align：center即可。但若是块状元素就不能这样了，需要其他的方式，或者将块状元素变为行内元素，再使用text-aling。<h3 id="伪类选择符">伪类选择符</h3>
+</li>
+<li>这个demo中用到了：hover，这是一个兼容性比较好的伪类选择符。设置当鼠标滑过时改变一些状态。<br>　　　　a:hover{ color:#666;}<br>　　　　div:hover{ cursor:pointer;}<h3 id="小工具的使用">小工具的使用</h3>
+</li>
+<li>照着别人的设计图写html和css,可以用到一些小工具来帮忙。比如在这个demo中用到了屏幕取色小工具和像素测量小工具，网上有很多~<h3 id="表格相关">表格相关</h3>
+</li>
+<li>直接给表格设置border的时候会发现，每个单元格都有边框，整个表格也有边框，看起来很乱。使用以下属性使变宽变得干净简洁些。<br>cellpadding 是边框与其内容的间隙大小；<br>cellspacing 是边框与边框之间的间隙大小；</li>
+<li>只对table td设置左与上边框，对table设置右与下边框。这样就不会边框重合变粗了。</li>
+<li>border-collapse:collapse属性,可使表格边框显示为一条单独的边框，更简单。</li>
+<li>border-collapse和cellspacing两者效果类似但不完全相同，前者相当于把两个挨着边框重合了，但是后者仅为挨着而已，会变粗。</li>
+<li>table-layout属性，默认值为auto，布局基于各单元格的内容。参数为fixed时，为固定布局的算法，布局与内容无关。在本例中运用这个属性，可以使表格每列的宽度相同，这样可以使表格的内容放在屏幕的中间（让左边的列内容右靠齐，右边列的内容左靠齐。用text-align属性）。</li>
+</ul>
+<h2 id="任务三：三栏式布局">任务三：三栏式布局</h2>
+<p>　　将布局分为三栏，分别命名为left,center,right,同时高度要保证自适应（比最高的一边长），同时有图片居中的问题。</p>
+<h3 id="绝对定位方式">绝对定位方式</h3>
+<ul>
+<li>给left和right设置绝对定位，规定它们和左右边距的距离。center所在的div保持左浮动。</li>
+<li>存在一个问题：父元素的高度自适应是不包括绝对定位的子元素的，因为绝对定位的子元素已经脱离了文档流。所以当left或right比较高的时候，最外层div的高度会出现问题。解决：可以给父元素指定一个min-height。</li>
+</ul>
+<h3 id="浮动方式">浮动方式</h3>
+<ul>
+<li>给left和right分别设置左浮动和右浮动，center布局的时候要写在left和right的下面，同时给包括center的div设置左浮动。</li>
+<li>存在一个问题，当三栏高度不同的时候，用这种方式不能讲center的宽度设为100%了，否则不会产生想要的效果。今后用这种方式的时候最后left，center，right都能用百分比来确定宽度。这样比较美观。</li>
+</ul>
+<h3 id="margin负值的方式">margin负值的方式</h3>
+<ul>
+<li>布局的时候center要使用双层标签。命名为main</li>
+<li>设置left，right,main均为左浮动，而main的width设为100%,给center设置左右边距，此时center在第一行，左右留有空隙将来给left和right。</li>
+<li>给left和right设置margin-left负边距，使他们上浮到center旁边。</li>
+<li>负边距对由文档流控制的元素的作用是，会使它们在文档流中的位置发生偏移，但这种偏移不同于相对定位，通过相对定位偏移后，其仍然会坚守着它原来占据的空间，不会让文档流的其它元素乘虚而入。而通过负边距进行偏移的元素，它会放弃偏移前占据的空间，这样它后面文档流中的其它元素就会“流”过来填充这部分空间。<h3 id="文档流">文档流</h3>
+　　元素在没有浮动和绝对定位时的正常布局方式，（从左到右，从上到下）。<br>　　脱离文档流，也就是将元素从普通的布局排版中拿走，其他盒子在定位的时候，会当做脱离文档流的元素不存在而进行定位。需要注意的是，使用float脱离文档流时，其他盒子会无视这个元素，但其他盒子内的文本依然会为这个元素让出位置，环绕在周围。而对于使用absolute positioning脱离文档流的元素，其他盒子与其他盒子内的文本都会无视它。<h3 id="参考">参考</h3>
+<a href="http://www.zhangxinxu.com/wordpress/2009/11/%E6%88%91%E7%86%9F%E7%9F%A5%E7%9A%84%E4%B8%89%E7%A7%8D%E4%B8%89%E6%A0%8F%E7%BD%91%E9%A1%B5%E5%AE%BD%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80%E6%96%B9%E6%B3%95/" target="_blank" rel="external">三种三栏网页宽度自适应布局方法</a><br><a href="http://www.cnblogs.com/2050/archive/2012/08/13/2636467.html#2457812" target="_blank" rel="external">强大的负边距</a><br><a href="https://www.zhihu.com/question/24529373/answer/29135021" target="_blank" rel="external">知乎上关于文档流的回答</a></li>
+</ul>
+<h2 id="任务四：定位和居中问题">任务四：定位和居中问题</h2>
+<h3 id="百分比+margin负值的方法">百分比+margin负值的方法</h3>
+<ul>
+<li>首先将子元素的left和top设为50%，然后根据子元素的宽和高设置margin-left和margin-top。整个过程就是一个先把子元素的左上角移动到父元素中间，再把子元素的中心调整到父元素中心的过程。</li>
+<li>这种方法需要知道元素的具体宽和高。</li>
+</ul>
+<h3 id="margin：auto水平居中+vertial-align垂直居中">margin：auto水平居中+vertial-align垂直居中</h3>
+<ul>
+<li>对于定宽的块级元素，还可以使用margin-left：auto和margin-right:aoto来实现水平居中。</li>
+<li>使用vertical-align实现垂直居中，要将块级元素变为table-cell型。</li>
+<li>使用relative和absolute组合的方式来实现元素相对其他元素定位。</li>
+</ul>
+<h2 id="任务五：HTML和CSS（二）">任务五：HTML和CSS（二）</h2>
+<p>　　任务五就是运用前面知识的综合练习。</p>
+<h2 id="任务六：HTML和CSS模拟报纸排版">任务六：HTML和CSS模拟报纸排版</h2>
+<p>　　任务六的要求是按照PDS设计稿的要求进行页面开发。<br>　　虽然之前看着慕课网的课程学过根据设计稿进行切图，但是根据设计图进行一个页面开发还是第一次。整个过程持续了一个下午，是一个非常细致的工作。让我对页面内的元素命名有了一定的感触（写到最后css特别多，感觉很乱），也真正明白了css3中出现那么多新的选择器的原因。
+　　</p>
+<h2 id="源代码">源代码</h2>
+<p><a href="https://github.com/lixurui309/ife" target="_blank" rel="external">源代码</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/HTML/">HTML</a><a href="/tags/CSS/">CSS</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/前端/">前端</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/03/20/百度前端技术学院2016春（1）HTML和CSS/" data-title="百度前端技术学院2016春（1）HTML和CSS | lixurui&#39;s blog" data-tsina="1554028216@qq.com" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/03/08/实验：访问floodlight提供的REST-API/"  title="实验：访问floodlight提供的REST API">
+ <strong>NEXT:</strong><br/> 
+ <span>实验：访问floodlight提供的REST API
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#任务一：零基础HTML编码"><span class="toc-number">1.</span> <span class="toc-text">任务一：零基础HTML编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#超链接不跳转"><span class="toc-number">1.1.</span> <span class="toc-text">超链接不跳转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务二：零基础HTML与CSS编码"><span class="toc-number">2.</span> <span class="toc-text">任务二：零基础HTML与CSS编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#块状元素、内联元素、内联块状元素"><span class="toc-number">2.1.</span> <span class="toc-text">块状元素、内联元素、内联块状元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#伪类选择符"><span class="toc-number">2.2.</span> <span class="toc-text">伪类选择符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小工具的使用"><span class="toc-number">2.3.</span> <span class="toc-text">小工具的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格相关"><span class="toc-number">2.4.</span> <span class="toc-text">表格相关</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务三：三栏式布局"><span class="toc-number">3.</span> <span class="toc-text">任务三：三栏式布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绝对定位方式"><span class="toc-number">3.1.</span> <span class="toc-text">绝对定位方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮动方式"><span class="toc-number">3.2.</span> <span class="toc-text">浮动方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#margin负值的方式"><span class="toc-number">3.3.</span> <span class="toc-text">margin负值的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文档流"><span class="toc-number">3.4.</span> <span class="toc-text">文档流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">3.5.</span> <span class="toc-text">参考</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务四：定位和居中问题"><span class="toc-number">4.</span> <span class="toc-text">任务四：定位和居中问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#百分比+margin负值的方法"><span class="toc-number">4.1.</span> <span class="toc-text">百分比+margin负值的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#margin：auto水平居中+vertial-align垂直居中"><span class="toc-number">4.2.</span> <span class="toc-text">margin：auto水平居中+vertial-align垂直居中</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务五：HTML和CSS（二）"><span class="toc-number">5.</span> <span class="toc-text">任务五：HTML和CSS（二）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务六：HTML和CSS模拟报纸排版"><span class="toc-number">6.</span> <span class="toc-text">任务六：HTML和CSS模拟报纸排版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源代码"><span class="toc-number">7.</span> <span class="toc-text">源代码</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/SDN/" title="SDN">SDN<sup>1</sup></a></li>
+		
+			<li><a href="/categories/前端/" title="前端">前端<sup>2</sup></a></li>
+		
+			<li><a href="/categories/随写/" title="随写">随写<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/CSS/" title="CSS">CSS<sup>2</sup></a></li>
+		
+			<li><a href="/tags/HTML/" title="HTML">HTML<sup>1</sup></a></li>
+		
+			<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>1</sup></a></li>
+		
+			<li><a href="/tags/floodlight/" title="floodlight">floodlight<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="lixuuri">lixuuri</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
