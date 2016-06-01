@@ -1,0 +1,439 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>百度前端技术学院2016春（2）JavaScript（一） | lixurui&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="lixuuri">
+    
+    <meta name="description" content="这篇记录了百度前端技术学院阶段2（JavaScript）部分任务14到任务21的知识点和演示，因为其他事情的缘故没有按照规定的时间完成。最近才重新开始，每一个任务都让我受益良多。不仅是知识点上的，还有心态上、处理问题上的进步。 继续加油~ 
+任务14：零基础Java其他事情ript编码（二）
+数组
+">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="lixurui&#39;s blog" title="lixurui&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="lixurui&#39;s blog">lixurui&#39;s blog</a></h1>
+				<h2 class="blog-motto">be a recorder</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/06/01/百度前端技术学院2016春（2）JavaScript（一）/" title="百度前端技术学院2016春（2）JavaScript（一）" itemprop="url">百度前端技术学院2016春（2）JavaScript（一）</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="lixuuri">lixuuri</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-06-01T09:48:13.000Z" itemprop="datePublished">6月 1 2016</time>
+    更新日期:<time datetime="2016-06-01T09:49:20.987Z" itemprop="dateModified">6月 1 2016</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#任务14：零基础Java其他事情ript编码（二）"><span class="toc-number">1.</span> <span class="toc-text">任务14：零基础Java其他事情ript编码（二）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-number">1.1.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建数组"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#读取和设置数组的值"><span class="toc-number">1.1.2.</span> <span class="toc-text">读取和设置数组的值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态创建修改DOM中的内容"><span class="toc-number">1.2.</span> <span class="toc-text">动态创建修改DOM中的内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#操作节点"><span class="toc-number">1.2.1.</span> <span class="toc-text">操作节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除所有节点"><span class="toc-number">1.2.2.</span> <span class="toc-text">删除所有节点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务15：零基础JavaScript编码（三）"><span class="toc-number">2.</span> <span class="toc-text">任务15：零基础JavaScript编码（三）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组操作"><span class="toc-number">2.1.</span> <span class="toc-text">数组操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组排序"><span class="toc-number">2.1.1.</span> <span class="toc-text">数组排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js选择器"><span class="toc-number">2.2.</span> <span class="toc-text">js选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#访问子节点childNodes"><span class="toc-number">2.2.1.</span> <span class="toc-text">访问子节点childNodes</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串操作"><span class="toc-number">2.3.</span> <span class="toc-text">字符串操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务16：零基础JavaScript编码（四）"><span class="toc-number">3.</span> <span class="toc-text">任务16：零基础JavaScript编码（四）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取数据处理"><span class="toc-number">3.1.</span> <span class="toc-text">获取数据处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#trim()"><span class="toc-number">3.1.1.</span> <span class="toc-text">trim()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入判断——正则表达式"><span class="toc-number">3.2.</span> <span class="toc-text">输入判断——正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#match()方法"><span class="toc-number">3.2.1.</span> <span class="toc-text">match()方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据存储——JSON和JavaScript对象字面量"><span class="toc-number">3.3.</span> <span class="toc-text">数据存储——JSON和JavaScript对象字面量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#添加和删除"><span class="toc-number">3.3.1.</span> <span class="toc-text">添加和删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件代理（事件委托）"><span class="toc-number">3.4.</span> <span class="toc-text">事件代理（事件委托）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#把事件处理程序指定给较高层级的元素"><span class="toc-number">3.4.1.</span> <span class="toc-text">把事件处理程序指定给较高层级的元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#event事件和具体行数绑定"><span class="toc-number">3.4.2.</span> <span class="toc-text">event事件和具体行数绑定</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务17：零基础JavaScript编码（四）"><span class="toc-number">4.</span> <span class="toc-text">任务17：零基础JavaScript编码（四）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对象"><span class="toc-number">4.1.</span> <span class="toc-text">对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#利用对象，进行跨浏览器的事件处理"><span class="toc-number">4.1.1.</span> <span class="toc-text">利用对象，进行跨浏览器的事件处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象的遍历"><span class="toc-number">4.1.2.</span> <span class="toc-text">对象的遍历</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用DOM实现柱状图标"><span class="toc-number">4.2.</span> <span class="toc-text">用DOM实现柱状图标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化图表所要的数据"><span class="toc-number">4.2.1.</span> <span class="toc-text">初始化图表所要的数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件委托"><span class="toc-number">4.3.</span> <span class="toc-text">事件委托</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务18：基础JavaScript练习（一）"><span class="toc-number">5.</span> <span class="toc-text">任务18：基础JavaScript练习（一）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用数组表示队列"><span class="toc-number">5.1.</span> <span class="toc-text">用数组表示队列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组的栈方法、队列方法"><span class="toc-number">5.1.1.</span> <span class="toc-text">数组的栈方法、队列方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#splice方法"><span class="toc-number">5.1.2.</span> <span class="toc-text">splice方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务19：基础JavaScript练习（二）"><span class="toc-number">6.</span> <span class="toc-text">任务19：基础JavaScript练习（二）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#限制输入和用高度表示数字的大小"><span class="toc-number">6.1.</span> <span class="toc-text">限制输入和用高度表示数字的大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用可视化方式表示排序"><span class="toc-number">6.2.</span> <span class="toc-text">用可视化方式表示排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#如何表达每一步的排序"><span class="toc-number">6.2.1.</span> <span class="toc-text">如何表达每一步的排序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务20：基础JavaScript练习（三）"><span class="toc-number">7.</span> <span class="toc-text">任务20：基础JavaScript练习（三）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#处理字符串"><span class="toc-number">7.1.</span> <span class="toc-text">处理字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模糊匹配"><span class="toc-number">7.2.</span> <span class="toc-text">模糊匹配</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务21：基础JavaScript练习（四）"><span class="toc-number">8.</span> <span class="toc-text">任务21：基础JavaScript练习（四）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#添加onmouseover事件相关"><span class="toc-number">8.1.</span> <span class="toc-text">添加onmouseover事件相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#键盘事件"><span class="toc-number">8.2.</span> <span class="toc-text">键盘事件</span></a></li></ol></li></ol>
+		</div>
+		
+		<p>　　这篇记录了百度前端技术学院阶段2（JavaScript）部分任务14到任务21的知识点和演示，因为其他事情的缘故没有按照规定的时间完成。最近才重新开始，每一个任务都让我受益良多。不仅是知识点上的，还有心态上、处理问题上的进步。 继续加油~ </p>
+<h2 id="任务14：零基础Java其他事情ript编码（二）">任务14：零基础Java其他事情ript编码（二）</h2>
+<h3 id="数组"><strong>数组</strong></h3>
+<h4 id="创建数组">创建数组</h4>
+<p>　　题目中使用的方式为使用数组字面量表示法。每一项又是一个数组字面量，包含名称和值。 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> aqiData = [</div><div class="line">  [<span class="string">"北京"</span>, <span class="number">90</span>],</div><div class="line">  [<span class="string">"上海"</span>, <span class="number">50</span>],</div><div class="line">  [<span class="string">"福州"</span>, <span class="number">10</span>],</div><div class="line">  [<span class="string">"广州"</span>, <span class="number">50</span>],</div><div class="line">  [<span class="string">"成都"</span>, <span class="number">90</span>],</div><div class="line">  [<span class="string">"西安"</span>, <span class="number">100</span>]</div><div class="line">];</div></pre></td></tr></table></figure>
+
+<h4 id="读取和设置数组的值">读取和设置数组的值</h4>
+<p>　　使用方括号并提供相应值的基于０的文字索引。<br>　　例如找到符合条件的值，并插入新的数组：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">newArray[a]=[aqiData[i][<span class="number">0</span>],aqiData[i][<span class="number">1</span>]];</div></pre></td></tr></table></figure>
+
+<h3 id="动态创建修改DOM中的内容"><strong>动态创建修改DOM中的内容</strong></h3>
+<p>　　1.创建节点:document.createElement(“li”)<br>　　2.将新节点添加到文档树中已经存在的节点中element.appendChild(newElement)</p>
+<h4 id="操作节点">操作节点</h4>
+<ul>
+<li>appendChild()</li>
+<li>insertBefore(要插入的节点，参照的节点)</li>
+<li>replaceChild(要插入的节点，要替换的节点)</li>
+<li>removeChild(要移除的节点)</li>
+<li>cloneNode(true/false)</li>
+<li>normalize()处理文档树中的文本节点，若不包含文本的空节点，则删除；若为连续两个文本节点，则合并为一个 </li>
+</ul>
+<h4 id="删除所有节点">删除所有节点</h4>
+<p>　　要注意倒着删除才能全部删除，否则会</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=oUl.childNodes.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--){	</div><div class="line">	oUl.removeChild(oUl.childNodes[i]);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="任务15：零基础JavaScript编码（三）">任务15：零基础JavaScript编码（三）</h2>
+<h3 id="数组操作"><strong>数组操作</strong></h3>
+<h4 id="数组排序">数组排序</h4>
+<p>　　数组排序用到了sort()方法。此方法默认按升序排，且接收一个比较函数作为参数，可利用此方法进行二维数组的排序。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortAqiData</span><span class="params">(data)</span> </span>{</div><div class="line">	<span class="comment">//二维数组的排序</span></div><div class="line">	data.sort(<span class="function"><span class="keyword">function</span><span class="params">(x,y)</span></span>{</div><div class="line">		<span class="keyword">return</span> x[<span class="number">1</span>]-y[<span class="number">1</span>];</div><div class="line">		});</div><div class="line">	<span class="keyword">return</span> data;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h3 id="js选择器"><strong>js选择器</strong></h3>
+<h4 id="访问子节点childNodes">访问子节点childNodes</h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=<span class="string">"source"</span>&gt;</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="title">li</span>&gt;</span>北京空气质量：<span class="tag">&lt;<span class="title">b</span>&gt;</span>90<span class="tag">&lt;/<span class="title">b</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>上海空气质量：<span class="tag">&lt;<span class="title">b</span>&gt;</span>70<span class="tag">&lt;/<span class="title">b</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>天津空气质量：<span class="tag">&lt;<span class="title">b</span>&gt;</span>80<span class="tag">&lt;/<span class="title">b</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>　　子节点的数目不是3，而是7。<br>　　若想选择li子节点，我结合了<strong>nodeType</strong>来选取。当nodeType为3时，是text类型，不操作。noteType为1，是element类型，此时选取了li。</p>
+<h3 id="字符串操作"><strong>字符串操作</strong></h3>
+<p>　　取到li中的innerHTML中的内容是字符串类型的，获取其中的数据用到了如下操作：</p>
+<ul>
+<li>stringObject.indexOf(string,startPos)返回指定字符串首次出现的位置</li>
+<li>stringObject.substring(startPos,stopPos）提取两个指定下标中的字符串<br><a href="https://github.com/lixurui309/ife2/blob/master/stage2/task15/task15.html" target="_blank" rel="external">代码</a><br><a href="http://htmlpreview.github.io/?https://github.com/lixurui309/ife2/blob/master/stage2/task15/task15.html" target="_blank" rel="external">演示</a><br>　　提交后发现有许多小问题，排名从0开始，排序方式不对，排名要转化成中文数字。</li>
+</ul>
+<h2 id="任务16：零基础JavaScript编码（四）">任务16：零基础JavaScript编码（四）</h2>
+<h3 id="获取数据处理"><strong>获取数据处理</strong></h3>
+<h4 id="trim()">trim()</h4>
+<p>　　通过trim()可去除字符串前后的空格。</p>
+<h3 id="输入判断——正则表达式"><strong>输入判断——正则表达式</strong></h3>
+<p>　　正则表达式由一些普通字符和一些元字符组成。在本练习中用到了如下：</p>
+<p><table class="table table-striped table-condensed"><br>    <tr><br>        <th>元字符</th><br>        <th>描述</th><br>    </tr><br>    <tr><br>        <td>＾</td><br>        <td>匹配输入字符串的开始位置</td><br>    </tr><br>    <tr><br>        <td>$</td><br>        <td>匹配输入字符串的结束位置</td><br>    </tr><br>    <tr><br>        <td>＋</td><br>        <td>匹配前面的子表达式一次或多次(大于等于1次）</td><br>    </tr><br>    <tr><br>        <td>\d</td><br>        <td>匹配一个数字字符。等价于[0-9]</td><br>    </tr><br></table><br>　　另外，用[\u4e00-\u9fa5]匹配中文字符。</p>
+<h4 id="match()方法">match()方法</h4>
+<p>　　match()方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。<br>　　stringObject.match(searchvalue)<br>　　stringObject.match(regexp)</p>
+<h3 id="数据存储——JSON和JavaScript对象字面量"><strong>数据存储——JSON和JavaScript对象字面量</strong></h3>
+<p>　　本练习中用JavaScript对象字面量表示了对象，与JSON表示有不同之处。<br>　　首先，JSON方式没有变量声明。其次，JSON方式没有末尾的分号。并且，JSON方式中对象的属性必须加双引号。</p>
+<h4 id="添加和删除">添加和删除</h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> aqiData = {};</div><div class="line"><span class="comment">//add property</span></div><div class="line">aqiData[oCity] = oAqiInput;</div><div class="line"><span class="comment">//aqiData["北京"]=100；</span></div><div class="line"><span class="comment">//delete</span></div><div class="line"><span class="keyword">delete</span> aqiData[oCity];</div></pre></td></tr></table></figure>
+
+<h3 id="事件代理（事件委托）"><strong>事件代理（事件委托）</strong></h3>
+<p>　　事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。使得整个页面所占用的内存空间更少，提升整体性能。添加事件处理程序的所需的DOM引用更少，所花的时间也减少。所有用到按钮的事件（多数鼠标事件和键盘事件）都适合采用事件委托技术。</p>
+<h4 id="把事件处理程序指定给较高层级的元素">把事件处理程序指定给较高层级的元素</h4>
+<p>　　如果带有事件处理程序的元素被innerTHML删除了，那么原来添加到元素中的事件处理程序有可能无法当作垃圾回收。如果不进行处理，他们很有可能还将对元素和对事件处理程序的引用都保存在内存中。<br>　　如果事先知道将来有可能删除掉页面的某一部分，可以不直接把事件处理程序添加到该部分的元素中，而通过把事件处理程序指定给更高层级的元素，同样能够处理该区域中的元素。<br>　　本练习中，要通过按钮删除表格的指定行，就可以把事件处理程序添加到整个表格上。</p>
+<h4 id="event事件和具体行数绑定">event事件和具体行数绑定</h4>
+<p>　　兼容DOM的浏览器会将一个event对象传入到事件处理程序中。无论指定事件处理程序时使用什么方法，都会传入event对象。<br>　　本练习通过event.type获取事件的目标，即button按钮，通过此按钮可以得到要删除的行。<br><a href="https://github.com/lixurui309/ife2/tree/master/stage2/task16" target="_blank" rel="external">代码</a></p>
+<h2 id="任务17：零基础JavaScript编码（四）">任务17：零基础JavaScript编码（四）</h2>
+<h3 id="对象"><strong>对象</strong></h3>
+<h4 id="利用对象，进行跨浏览器的事件处理">利用对象，进行跨浏览器的事件处理</h4>
+<p>　　通过把对象封装到一个单独的js中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> eventUtil = {</div><div class="line">	<span class="comment">//添加</span></div><div class="line">	addHandler:<span class="function"><span class="keyword">function</span><span class="params">(element,type,handler)</span></span>{</div><div class="line">		<span class="keyword">if</span>(element.addEventListener){</div><div class="line">			element.addEventListener(type,handler,<span class="literal">false</span>);</div><div class="line">		}<span class="keyword">else</span> <span class="keyword">if</span>(element.attachEvent){</div><div class="line">			element.attachEvent(<span class="string">'on'</span>+type,handler);</div><div class="line">		}<span class="keyword">else</span>{</div><div class="line">			element[<span class="string">'on'</span>+type]=handler;</div><div class="line">		}</div><div class="line">		},</div><div class="line">	......</div></pre></td></tr></table></figure>
+
+<h4 id="对象的遍历">对象的遍历</h4>
+<p>　　本练习中的数据是存储在一个对象中，遍历和数组的遍历有一些不同。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> x <span class="keyword">in</span> aqiSourceData){</div><div class="line">	  <span class="keyword">var</span> newOption = <span class="built_in">document</span>.createElement(<span class="string">"option"</span>);</div><div class="line">	  newOption.value = i++;</div><div class="line">	  newOption.innerHTML = x;</div><div class="line">	  citySelect.appendChild(newOption);</div><div class="line">	  }</div></pre></td></tr></table></figure>
+
+<p>　　通过这样的方式，获取对象中的值，并放入select的下拉列表选项中。给select设置事件，当选项发生改变时调用函数，此时用到onchange方法。</p>
+<h3 id="用DOM实现柱状图标"><strong>用DOM实现柱状图标</strong></h3>
+<h4 id="初始化图表所要的数据">初始化图表所要的数据</h4>
+<p>　　本练习非常重要的点就是如何把原始的数据处理成图标所需要的数据。数据格式的设计很重要。这部分参考了别人的代码。</p>
+<h3 id="事件委托"><strong>事件委托</strong></h3>
+<p>　　通过本练习，更加理解了事件委托的用法。在本练习中没有个每个按钮和每个select选项上添加事件，而是在更高的元素上添加的，通过事件对象知道到底选择的是哪一个元素。<br><a href="https://github.com/lixurui309/ife2/tree/master/stage2/task17" target="_blank" rel="external">代码</a><br><a href="http://lixurui309.github.io/ife2/stage2/task17/task17.html" target="_blank" rel="external">演示</a><br><a href="http://ife.baidu.com/note/detail?noteId=137&amp;qq-pf-to=pcqq.group" target="_blank" rel="external">在github中创建项目的demo</a></p>
+<h2 id="任务18：基础JavaScript练习（一）">任务18：基础JavaScript练习（一）</h2>
+<h3 id="用数组表示队列"><strong>用数组表示队列</strong></h3>
+<p>　　本练习要完成一个队列的效果，并进行左添加、右添加、左删除、右删除、删除某一项的操作。<br>　　我用到JavaScript中的数组来存储数据，数组的一些特定方法可以完成需求。</p>
+<h4 id="数组的栈方法、队列方法">数组的栈方法、队列方法</h4>
+<p>　　用数组的这些方法可以完成栈、队列的相关操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> que = <span class="keyword">new</span> <span class="built_in">Array</span>();<span class="comment">//创建一个数组</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">divChange</span><span class="params">(oInput,target)</span></span>{ <span class="comment">//进行队列、栈操作</span></div><div class="line">	<span class="keyword">switch</span>(target.id){</div><div class="line">		<span class="keyword">case</span> <span class="string">"leftIn"</span>:</div><div class="line">			que.unshift(oInput); <span class="comment">//以相反的方式模拟队列，即前端添加，后端删除</span></div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">"rightIn"</span>:</div><div class="line">			que.push(oInput);</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">"leftOut"</span>:</div><div class="line">			que.shift();  <span class="comment">//取得第一项，正好对应于左删除</span></div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">"rightOut"</span>:</div><div class="line">			que.pop();</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		}</div><div class="line">	}</div><div class="line"><span class="comment">//删除数组中的某一项</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">divChange2</span><span class="params">(target)</span></span>{</div><div class="line">	<span class="keyword">var</span> id = target.id;</div><div class="line">	<span class="keyword">var</span> index = id.substring(<span class="number">3</span>);  <span class="comment">//通过div的id和que的下标关系得到要删除的数组元素的下标</span></div><div class="line">	que.splice(index,<span class="number">1</span>);  <span class="comment">//删除起始下标为index,长度为1的值</span></div><div class="line">	}</div></pre></td></tr></table></figure>
+
+<h4 id="splice方法">splice方法</h4>
+<p>　　splice(index,len,[item])，该方法会改变原始数组。<br>　　可用于替换、添加、删除数组的某个或几个值。<br>　　delete方法，删除掉数组的某元素后，会把该下标位置置为undefined，数组的长度不变。<br><a href="https://github.com/lixurui309/ife2/tree/gh-pages/stage2/task18" target="_blank" rel="external">代码</a><br><a href="http://lixurui309.github.io/ife2/stage2/task18/task18.html" target="_blank" rel="external">演示</a></p>
+<h2 id="任务19：基础JavaScript练习（二）">任务19：基础JavaScript练习（二）</h2>
+<h3 id="限制输入和用高度表示数字的大小"><strong>限制输入和用高度表示数字的大小</strong></h3>
+<p>　　这两个要求在前面的练习中都有，其中用高度表示大小用到了子元素为绝对定位、父元素相对定位的方式。</p>
+<h3 id="用可视化方式表示排序"><strong>用可视化方式表示排序</strong></h3>
+<h4 id="如何表达每一步的排序">如何表达每一步的排序</h4>
+<p>　　我用到的方式是在排序之前，创建一个空的数组，在排序过程的结果都用数组存储起来，即存储为一个二维数组。这里有个问题困惑我了很久，如下： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> queSort = <span class="keyword">new</span> <span class="built_in">Array</span>();<span class="comment">//创建一个数组，来存储每一步的排序结果</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span><span class="params">()</span></span>{  <span class="comment">//冒泡排序</span></div><div class="line">	<span class="keyword">var</span> t=<span class="number">0</span>,k=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;que.length-<span class="number">1</span>;i++){  <span class="comment">//que是原来的数组</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;que.length-i;j++){</div><div class="line">			<span class="keyword">if</span>(que[j]&lt;que[j+<span class="number">1</span>]){</div><div class="line">				t=que[j];</div><div class="line">				que[j]=que[j+<span class="number">1</span>];</div><div class="line">				que[j+<span class="number">1</span>]=t;   </div><div class="line">				queSort[k] = que;　　／／１</div><div class="line">				<span class="built_in">console</span>.log(queSort[k]);</div><div class="line">				k++;			</div><div class="line">			}<span class="comment">//if</span></div><div class="line">		}<span class="comment">//for</span></div><div class="line">	}<span class="comment">//for</span></div><div class="line">	<span class="comment">//alert(queSort[0][0]);</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"bbb"</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;queSort.length;i++){</div><div class="line">		<span class="built_in">console</span>.log(queSort[i]);</div><div class="line">		}</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>　　通过这种方式给queSort数组赋值，每一个值又为一个数组，但是在最后遍历的时候，发现数组的每一项都是一样的，这是这种方式进行赋值后，因为在js中，Array是引用类型，que发生了变化，又会影响之前queSort[i]的值。<br>　　若想让queSort[i]为一个不受干扰的数组，可以将1改为queSort[k]= que.slice();对que数组进行克隆。<br>　　也可以使用concat()。concat()返回的并不是调用函数的Array，而是一个新的Array，所以可以利用这一点进行复制。<br><a href="https://github.com/lixurui309/ife2/tree/gh-pages/stage2/task19" target="_blank" rel="external">代码</a>　<br><a href="http://lixurui309.github.io/ife2/stage2/task19/task19.html" target="_blank" rel="external">演示</a></p>
+<h2 id="任务20：基础JavaScript练习（三）">任务20：基础JavaScript练习（三）</h2>
+<p>　　此任务为任务１８的拓展，增加了字符串的处理，模糊匹配等内容。</p>
+<h3 id="处理字符串"><strong>处理字符串</strong></h3>
+<p>　　可以输入 英文、数字、汉子字符，并以一定的方式分割。通过下面的方式将字符串处理并插入数组中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">queIn</span><span class="params">()</span></span>{</div><div class="line">	<span class="keyword">var</span> text = <span class="built_in">document</span>.getElementById(<span class="string">"input1"</span>).value.trim();</div><div class="line">	text = text.replace(<span class="regexp">/[^0-9a-zA-Z\u4e00-\u9fa5]/ig</span>,<span class="string">" "</span>);</div><div class="line">	text=text.split(<span class="string">" "</span>);<span class="comment">//分割字符串为字符串数组</span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> text){</div><div class="line">		que.push(text[i]);</div><div class="line">		}</div><div class="line">	}</div></pre></td></tr></table></figure>
+
+<h3 id="模糊匹配"><strong>模糊匹配</strong></h3>
+<p>　　通过字符串的indexof方法，来判断是否匹配查询的值。通过新建一个数组，把</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">queSelect</span><span class="params">()</span></span>{</div><div class="line">	<span class="keyword">var</span> j=<span class="number">0</span>;</div><div class="line">	<span class="keyword">var</span> selectText = <span class="built_in">document</span>.getElementById(<span class="string">"select"</span>).value.trim();</div><div class="line">	selectText = selectText.replace(<span class="regexp">/[^0-9a-zA-Z\u4e00-\u9fa5]/ig</span>,<span class="string">""</span>);<span class="comment">//处理要匹配的字符</span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;que.length;i++){</div><div class="line">		<span class="keyword">if</span>(que[i].indexOf(selectText)&gt;=<span class="number">0</span>){<span class="comment">//若匹配</span></div><div class="line">			que2[i] = que[i];</div><div class="line">			que2L = <span class="number">1</span>;  <span class="comment">//将标志改为1</span></div><div class="line">			}</div><div class="line">		<span class="keyword">else</span>{</div><div class="line">			que2[i] = <span class="string">"*"</span>;<span class="comment">//不匹配则新的数组 </span></div><div class="line">			}</div><div class="line">		}</div><div class="line">	}</div></pre></td></tr></table></figure>
+
+<p>　　通过这样的方式就得到了两个数组，一个是元素组，一个新的数组，其中匹配的项新数组中有内容，否则新数组中的内容为*，通过遍历两个数组，来渲染图。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">renderChart</span><span class="params">()</span></span>{</div><div class="line">	<span class="keyword">var</span> renderDiv = <span class="built_in">document</span>.getElementById(<span class="string">"showQue"</span>);</div><div class="line">	<span class="keyword">var</span> text=<span class="string">""</span>;</div><div class="line">	<span class="keyword">if</span>(que2L==<span class="number">1</span>){  <span class="comment">//有查询到结果</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;que.length;i++){</div><div class="line">			<span class="keyword">if</span>(que2[i]==<span class="string">"*"</span>){  <span class="comment">//第i项是否匹配</span></div><div class="line">				<span class="built_in">console</span>.log(<span class="string">"不匹配"</span>+i);</div><div class="line">				text += <span class="string">'&lt;div id="div'</span>+i+<span class="string">'" style="height:50px; width:50px; background-color:red; color:#fff;"&gt;'</span>+que[i]+<span class="string">'&lt;/div&gt;'</span>;</div><div class="line">			}<span class="keyword">else</span>{  <span class="comment">//匹配的项</span></div><div class="line">				<span class="built_in">console</span>.log(<span class="string">"匹配"</span>+i);</div><div class="line">				text += <span class="string">'&lt;div id="div'</span>+i+<span class="string">'" style="height:50px; width:50px; background-color:red; color:green;"&gt;'</span>+que[i]+<span class="string">'&lt;/div&gt;'</span>;</div><div class="line">				}</div><div class="line">		}</div><div class="line">	}<span class="keyword">else</span>{ <span class="comment">//没有查询到结果</span></div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"没查询结果"</span>);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;que.length;i++){</div><div class="line">			text += <span class="string">'&lt;div id="div'</span>+i+<span class="string">'" style="height:50px; width:50px; background-color:red; color:#fff;"&gt;'</span>+que[i]+<span class="string">'&lt;/div&gt;'</span>;</div><div class="line">			}</div><div class="line">		}</div><div class="line">	renderDiv.innerHTML = text;</div><div class="line">	}</div></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/lixurui309/ife2/tree/gh-pages/stage2/task20" target="_blank" rel="external">代码</a>　<br><a href="http://lixurui309.github.io/ife2/stage2/task20/task20.html" target="_blank" rel="external">演示</a></p>
+<h2 id="任务21：基础JavaScript练习（四）">任务21：基础JavaScript练习（四）</h2>
+<p>　　这个练习是在任务20的改进，练习了代码的抽象和封装。主要抽象出来了插入、删除、比较等功能。大部分知识点都是之前了解过的，在编码的过程中进一步的复习、反思、总结，也遇到了许多小问题，在写代码的过程中收获很多但是遇到问题不再觉得烦躁和不知所措，而是知道该如何下手了，这是写代码让我成长的地方！</p>
+<h3 id="添加onmouseover事件相关"><strong>添加onmouseover事件相关</strong></h3>
+<p>　　在给父元素添加onmouseover事件后，却想要实现这样的功能：在进入子元素的时候才触发事件。可以加入判断。此时父元素为div，子元素为span</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">eventUtil.addHandler(renderDiv[<span class="number">0</span>],<span class="string">'mouseover'</span>,<span class="function"><span class="keyword">function</span><span class="params">(event)</span></span>{<span class="comment">//删除技能提示（移入）</span></div><div class="line">		event = eventUtil.getEvent(event);</div><div class="line">		<span class="keyword">var</span> target = eventUtil.getElement(event);</div><div class="line">		<span class="keyword">if</span>(target.nodeName==<span class="string">"SPAN"</span>){<span class="comment">//这里加一个判断，就不会在刚进入父元素的时候就产生事件了</span></div><div class="line">			target.textContent = <span class="string">'删除：'</span>+target.textContent;</div><div class="line">			}</div><div class="line">		});</div></pre></td></tr></table></figure>
+
+<h3 id="键盘事件"><strong>键盘事件</strong></h3>
+<p>　　在此联系中，要实现这样的功能：输入空格、逗号、回车时，将内容保存并显示。这里要用到event对象的keyCode属性来判断键盘输入的值。这里出现了一个问题就是，出现中文输入法的时候许多键盘的keyCode变为229，用KeyUp键盘事件就不会再出现这样的问题了。<br><a href="https://github.com/lixurui309/ife2/tree/gh-pages/stage2/task21" target="_blank" rel="external">代码</a>　<br><a href="http://lixurui309.github.io/ife2/stage2/task21/task21.html" target="_blank" rel="external">演示</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/前端/">前端</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/06/01/百度前端技术学院2016春（2）JavaScript（一）/" data-title="百度前端技术学院2016春（2）JavaScript（一） | lixurui&#39;s blog" data-tsina="1554028216@qq.com" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/03/20/百度前端技术学院2016春（1）HTML和CSS/"  title="百度前端技术学院2016春（1）HTML和CSS">
+ <strong>NEXT:</strong><br/> 
+ <span>百度前端技术学院2016春（1）HTML和CSS
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#任务14：零基础Java其他事情ript编码（二）"><span class="toc-number">1.</span> <span class="toc-text">任务14：零基础Java其他事情ript编码（二）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-number">1.1.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建数组"><span class="toc-number">1.1.1.</span> <span class="toc-text">创建数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#读取和设置数组的值"><span class="toc-number">1.1.2.</span> <span class="toc-text">读取和设置数组的值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态创建修改DOM中的内容"><span class="toc-number">1.2.</span> <span class="toc-text">动态创建修改DOM中的内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#操作节点"><span class="toc-number">1.2.1.</span> <span class="toc-text">操作节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除所有节点"><span class="toc-number">1.2.2.</span> <span class="toc-text">删除所有节点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务15：零基础JavaScript编码（三）"><span class="toc-number">2.</span> <span class="toc-text">任务15：零基础JavaScript编码（三）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组操作"><span class="toc-number">2.1.</span> <span class="toc-text">数组操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组排序"><span class="toc-number">2.1.1.</span> <span class="toc-text">数组排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js选择器"><span class="toc-number">2.2.</span> <span class="toc-text">js选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#访问子节点childNodes"><span class="toc-number">2.2.1.</span> <span class="toc-text">访问子节点childNodes</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串操作"><span class="toc-number">2.3.</span> <span class="toc-text">字符串操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务16：零基础JavaScript编码（四）"><span class="toc-number">3.</span> <span class="toc-text">任务16：零基础JavaScript编码（四）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取数据处理"><span class="toc-number">3.1.</span> <span class="toc-text">获取数据处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#trim()"><span class="toc-number">3.1.1.</span> <span class="toc-text">trim()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入判断——正则表达式"><span class="toc-number">3.2.</span> <span class="toc-text">输入判断——正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#match()方法"><span class="toc-number">3.2.1.</span> <span class="toc-text">match()方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据存储——JSON和JavaScript对象字面量"><span class="toc-number">3.3.</span> <span class="toc-text">数据存储——JSON和JavaScript对象字面量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#添加和删除"><span class="toc-number">3.3.1.</span> <span class="toc-text">添加和删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件代理（事件委托）"><span class="toc-number">3.4.</span> <span class="toc-text">事件代理（事件委托）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#把事件处理程序指定给较高层级的元素"><span class="toc-number">3.4.1.</span> <span class="toc-text">把事件处理程序指定给较高层级的元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#event事件和具体行数绑定"><span class="toc-number">3.4.2.</span> <span class="toc-text">event事件和具体行数绑定</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务17：零基础JavaScript编码（四）"><span class="toc-number">4.</span> <span class="toc-text">任务17：零基础JavaScript编码（四）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对象"><span class="toc-number">4.1.</span> <span class="toc-text">对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#利用对象，进行跨浏览器的事件处理"><span class="toc-number">4.1.1.</span> <span class="toc-text">利用对象，进行跨浏览器的事件处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象的遍历"><span class="toc-number">4.1.2.</span> <span class="toc-text">对象的遍历</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用DOM实现柱状图标"><span class="toc-number">4.2.</span> <span class="toc-text">用DOM实现柱状图标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化图表所要的数据"><span class="toc-number">4.2.1.</span> <span class="toc-text">初始化图表所要的数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件委托"><span class="toc-number">4.3.</span> <span class="toc-text">事件委托</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务18：基础JavaScript练习（一）"><span class="toc-number">5.</span> <span class="toc-text">任务18：基础JavaScript练习（一）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用数组表示队列"><span class="toc-number">5.1.</span> <span class="toc-text">用数组表示队列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组的栈方法、队列方法"><span class="toc-number">5.1.1.</span> <span class="toc-text">数组的栈方法、队列方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#splice方法"><span class="toc-number">5.1.2.</span> <span class="toc-text">splice方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务19：基础JavaScript练习（二）"><span class="toc-number">6.</span> <span class="toc-text">任务19：基础JavaScript练习（二）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#限制输入和用高度表示数字的大小"><span class="toc-number">6.1.</span> <span class="toc-text">限制输入和用高度表示数字的大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用可视化方式表示排序"><span class="toc-number">6.2.</span> <span class="toc-text">用可视化方式表示排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#如何表达每一步的排序"><span class="toc-number">6.2.1.</span> <span class="toc-text">如何表达每一步的排序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务20：基础JavaScript练习（三）"><span class="toc-number">7.</span> <span class="toc-text">任务20：基础JavaScript练习（三）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#处理字符串"><span class="toc-number">7.1.</span> <span class="toc-text">处理字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模糊匹配"><span class="toc-number">7.2.</span> <span class="toc-text">模糊匹配</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务21：基础JavaScript练习（四）"><span class="toc-number">8.</span> <span class="toc-text">任务21：基础JavaScript练习（四）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#添加onmouseover事件相关"><span class="toc-number">8.1.</span> <span class="toc-text">添加onmouseover事件相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#键盘事件"><span class="toc-number">8.2.</span> <span class="toc-text">键盘事件</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/SDN/" title="SDN">SDN<sup>1</sup></a></li>
+		
+			<li><a href="/categories/前端/" title="前端">前端<sup>3</sup></a></li>
+		
+			<li><a href="/categories/随写/" title="随写">随写<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/CSS/" title="CSS">CSS<sup>2</sup></a></li>
+		
+			<li><a href="/tags/HTML/" title="HTML">HTML<sup>1</sup></a></li>
+		
+			<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
+		
+			<li><a href="/tags/floodlight/" title="floodlight">floodlight<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="lixuuri">lixuuri</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
